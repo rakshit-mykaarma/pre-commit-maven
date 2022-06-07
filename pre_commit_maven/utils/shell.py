@@ -26,7 +26,7 @@ def execute(cmd, **kwargs):
     process = subprocess.Popen(" ".join(cmd), **kwargs)
     stdout, stderr = process.communicate()
 
-    return ExecutionResult(process.returncode, stdout, stderr)
+    return ExecutionResult(process.returncode, stdout + "\n" + " ".join(cmd), stderr)
 
 
 def exists_file(file_path: str) -> bool:
