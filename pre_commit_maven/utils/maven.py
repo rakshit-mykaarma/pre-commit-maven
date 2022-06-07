@@ -11,7 +11,6 @@ MAVEN_OPTS = [
     "-XX:+TieredCompilation",
     "-XX:TieredStopAtLevel=1",
     "-Xverify:none",
-    "-Dincludes='**\\'$(git diff --cached --name-only --diff-filter=A | xargs -n1 basename | tr '\n' ' '| rev | cut -c 2- | rev | sed 's/ /,**\\/g')",
 ]
 
 
