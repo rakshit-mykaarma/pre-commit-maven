@@ -5,12 +5,13 @@ import os.path
 from pre_commit_maven.utils import shell
 from pre_commit_maven.utils.shell import ExecutionResult
 
-MAVEN_CLI_OPTS = ["-Dincludes='**\\'$(git diff --cached --name-only --diff-filter=A | xargs -n1 basename | tr '\n' ' '| rev | cut -c 2- | rev | sed 's/ /,**\\/g')"]
+MAVEN_CLI_OPTS = ["--batch-mode"]
 MAVEN_OPTS = [
     "-client",
     "-XX:+TieredCompilation",
     "-XX:TieredStopAtLevel=1",
     "-Xverify:none",
+    "-Dincludes='**\\'$(git diff --cached --name-only --diff-filter=A | xargs -n1 basename | tr '\n' ' '| rev | cut -c 2- | rev | sed 's/ /,**\\/g')",
 ]
 
 
