@@ -6,12 +6,7 @@ from pre_commit_maven.utils import shell
 from pre_commit_maven.utils.shell import ExecutionResult
 
 MAVEN_CLI_OPTS = []
-MAVEN_OPTS = [
-    "-client",
-    "-XX:+TieredCompilation",
-    "-XX:TieredStopAtLevel=1",
-    "-Xverify:none",
-]
+MAVEN_OPTS = []
 
 
 class Colours:
